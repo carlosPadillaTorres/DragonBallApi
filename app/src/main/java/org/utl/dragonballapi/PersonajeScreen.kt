@@ -47,13 +47,13 @@ fun PersonajeScreen(personajeViewModel: PersonajeViewModel) {
             CircularProgressIndicator()
         }
     }
-
     Tarjeta(state.personajes)
 }
 
 @Composable
 fun Tarjeta(personajes: List<Personaje>){
     LazyColumn {
+
         items(personajes) { personaje ->
             MyPersonajes(personaje)
         }
@@ -69,7 +69,7 @@ fun MyPersonajes(personaje: Personaje){
             .fillMaxWidth(),
         elevation =  CardDefaults.cardElevation(defaultElevation = 8.dp),
         shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White)
+        colors = CardDefaults.cardColors(containerColor = Color.Blue)
     ) {
         Row(
             modifier = Modifier
@@ -98,8 +98,8 @@ fun Personajes(personaje: Personaje) {
             }
     ) {
         Personaje(personaje.name,
-            MaterialTheme.colorScheme.primary,
-            MaterialTheme.typography.headlineMedium)
+            MaterialTheme.colorScheme.tertiary,
+            MaterialTheme.typography.bodyMedium)
 
         Personaje(personaje.description,
             MaterialTheme.colorScheme.onBackground,
@@ -122,7 +122,7 @@ fun imagenHeroe(imageName: String) {
             .padding(16.dp)
             .size(100.dp)
             .clip(CircleShape)
-            .background(MaterialTheme.colorScheme.tertiary)
+            .background(MaterialTheme.colorScheme.primary)
     )
 }
 
@@ -134,7 +134,7 @@ fun ImagenPersonaje(nombre: String,imagenUrl: String){
         modifier = Modifier
             .padding(10.dp)
             .size(100.dp)
-            .clip(MaterialTheme.shapes.small)
+            .clip(CircleShape)
             .background(MaterialTheme.colorScheme.primary)
     )
 }

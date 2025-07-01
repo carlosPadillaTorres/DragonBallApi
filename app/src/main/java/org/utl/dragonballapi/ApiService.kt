@@ -24,7 +24,7 @@ interface ApiService {
     @DELETE("posts/{id}")
     fun deleteStudent(@Path("id") itemId:Int): Call<Void>*/
 
-    @GET("characters?page=2&limit=15")
+    @GET("characters?page=2&limit=20")
     suspend fun getPersonajes(): RespuestaPersonaje
 
     companion object{
